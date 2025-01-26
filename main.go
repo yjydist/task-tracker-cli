@@ -5,12 +5,12 @@ import (
 	"task-tracker/util"
 )
 
-func init(){
+func init() {
 	util.Load()
-	util.Save()
 }
 
 func main() {
+	defer util.Save()
 	cmd.RootCmd.Execute()
 
 }

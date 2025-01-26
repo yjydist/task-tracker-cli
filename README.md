@@ -7,15 +7,15 @@ A simple task tracker that allows you to add, delete, and mark tasks as complete
 ./
 ├── README.md
 ├── cmd
-│   ├── add.go
-│   ├── root.go
-│   ├── update.go
-│   └── version.go
+│   ├── add.go
+│   ├── root.go
+│   ├── update.go
+│   └── version.go
 ├── go.mod
 ├── go.sum
 ├── main.go
 ├── model
-│   └── task.go
+│   └── task.go
 └── util
     └── save.go
 ```
