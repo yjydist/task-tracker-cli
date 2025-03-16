@@ -1,24 +1,21 @@
-// Package cmd
-// Description: This file contains the root command for the Task Tracker CLI
 package cmd
 
 import (
 	"fmt"
+	"os"
+
 	"github.com/spf13/cobra"
 )
 
-var RootCmd = &cobra.Command{
-	Use:   "task-tracker",
-	Short: "Task Tracker is a CLI for managing your tasks",
-	Long:  "Task Tracker is a CLI for managing your tasks. It is a simple CLI that allows you to add, list, and complete tasks.",
-	Run: func(cmd *cobra.Command, args []string) {
-		fmt.Println("Task Tracker, type --help for usage")
-	},
+var rootCmd = &cobra.Command{
+	Use:   "task-cli",
+	Short: "A simple task tracking CLI",
+	Long:  `Task CLI is a tool for managing your tasks from the command line.`,
 }
 
-func init() {
-	RootCmd.AddCommand(addCmd)
-	RootCmd.AddCommand(listCmd)
-	RootCmd.AddCommand(updateCmd)
-	RootCmd.AddCommand(versionCmd)
+func Execute() {
+	if err := rootCmd.Execute(); err != nil {
+		fmt.Println(err)
+		os.Exit(1)
+	}
 }

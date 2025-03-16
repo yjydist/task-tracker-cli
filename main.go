@@ -1,16 +1,9 @@
 package main
 
 import (
-	"task-tracker/cmd"
-	"task-tracker/util"
+	"task-cli/cmd"
 )
 
-func init() {
-	util.Load()
-}
-
 func main() {
-	defer util.Save()
-	cmd.RootCmd.Execute()
-
+	cmd.Execute()
 }
